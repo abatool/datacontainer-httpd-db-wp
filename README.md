@@ -1,4 +1,4 @@
-## datacontainer-httpd-db-ap
+# datacontainer-httpd-db-ap
 This repository contain a Dockerfile to build a data container image that mount DocumentRoot for apache, and install **wordpress** in the directory and also mount it on the host machine, it’s also contain a script file that have all the commands that you have to run to create containers. 
 
 ## Base Docker Image
@@ -38,7 +38,7 @@ With **--name** you can give a name to you container at container creation time.
 
 With **MYSQL_ROOT_PASSWORD** enviroment variable you can set the mariadb root password at container creation time.
 
-With **MYSQL_DATABASE1 **,MYSQL_USER1**, **MYSQL_PASSWORD1** you can create a mysql db, user with all privileges upon this db, and its password, at container creation time.
+With **MYSQL_DATABASE1**, **MYSQL_USER1**, **MYSQL_PASSWORD1** you can create a mysql db, user with all privileges upon this db, and its password, at container creation time.
 
 You can also create up to 10 triplets (db, user, password) using MYSQL_DATABASEn, MYSQL_USERn, MYSQL_PASSWORDn environment variables, with n=1..10
 
@@ -84,11 +84,11 @@ This command list all the information about the container to see the mounted vol
           "Propagation": ""
            
          },
-                ]
+   ]
 
 You can enter in the source directory and see that there are all the **wordpress** configuration files now even if you delete your apache container the configuration files will be there and all you need to do is create apache container again and you will be able to use the **same wordpress** once again.
 
-## script
+## Script
 
 You can run the following script to create a network for the containers and a create datacontainer with this image (abatool1/datacontainer-httpd-db-wp) which maps the apache directory /usr/www/html and mariadb directory /var/lib/mysql and also runs apache and mariadb containers.
 
