@@ -13,11 +13,11 @@ RUN useradd -u 101 -g 101 apache
  
 #Declare the work directory
 WORKDIR ["/var/www/html"]
-#
+
+#Install wget.
 RUN yum install wget -y && \
 
 #Enter in the directory /var/www/html
-
 cd /var/www/html && \
 
 #Installation of latest version of wordpress.
