@@ -1,4 +1,4 @@
-# datacontainer-httpd-db-ap
+# datacontainer-httpd-db-wp
 This repository contain a Dockerfile to build a data container image that mount DocumentRoot for apache, and install **wordpress** in the directory and also mount it on the host machine, it’s also contain a script file that have all the commands that you have to run to create containers. 
 
 ## Base Docker Image
