@@ -8,8 +8,8 @@ RUN mkdir -p /var/www/html
 RUN mkdir -p /var/lib/myqsl
 
 #Creating user and group apache with uid and guid.
-RUN groupadd -g 101 apache
-RUN useradd -u 101 -g 101 apache
+RUN groupadd -g 107 apache
+RUN useradd -u 107 -g 107 apache
  
 #Declare the work directory
 WORKDIR ["/var/www/html"]
