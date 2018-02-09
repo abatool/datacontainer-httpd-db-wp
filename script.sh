@@ -22,6 +22,6 @@ echo "--------------------------------------------------------------------------
 echo "----------Create an apache-based container called apache2 with image abatool1/httpd-php using volumes of the datacontainer---------------"
 echo "------------------------------------------------------------------------------------------------------"
 
-docker run--name apache2 -d -p 8080:80 --network wpnet --volumes-from datacontainer abatool1/httpd-php
+docker run --name apache2 -d -p 8080:80 --network wpnet --volumes-from datacontainer abatool1/httpd-php
 
 
