@@ -31,7 +31,7 @@ Then we create a container with this image.
 
 ## Docker run example:
 
-**$ docker run --name db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
+**$ docker run --name db -d -p 3306:3306 --network wpnet -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
 
 Here I am using **orboan/dcsss-mariadb** image to create a container based on mariadb here we create a     
 database for our **wordpress**.
@@ -102,9 +102,9 @@ You can run the following script to create a network for the containers and a cr
 
 #/bin/bash
 
-#Creation of a new network called exnet2.
+#Creation of a new network wpnet.
 
-**docker network create exnet2**
+**docker network create wpnet**
 
 #Creating a container named datacontainer with the image abatool1/datacontainer-httpd-db-wp which is mapping volumes /var/www/html for apache and /var/lib/mysql (database for wordpress) for mariadb.
 
@@ -112,7 +112,7 @@ You can run the following script to create a network for the containers and a cr
 
 #Create a mariadb-based container named db with image orboan/dcsss-mariadb using volumes of the datacontainer
 
-**docker run --name db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
+**docker run --name db -d -p 3306:3306 --network wpnet -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
 
 #Create an apache-based container called apache2 with image abatool1/httpd-php using datacontainer volumes.
 
