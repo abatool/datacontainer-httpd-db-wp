@@ -46,7 +46,7 @@ You can also create up to 10 triplets (db, user, password) using MYSQL_DATABASEn
 
 **3306:3306** maps the mariadb server. 
 
-**$ docker run -d --name apache2 -p 8080:80 --network wpnet --volumes-from datacontainer abatool1/httpd-php**
+**$ docker run --name apache2 -d -p 8080:80 --network wpnet --volumes-from datacontainer abatool1/httpd-php**
 
 With this command we create an apache based container with image **abatool1/httpd-php** (it’s an image of apache with php installed). 
 
@@ -116,7 +116,7 @@ You can run the following script to create a network for the containers and a cr
 
 #Create an apache-based container called apache2 with image abatool1/httpd-php using datacontainer volumes.
 
-**docker run -d --name apache2 -p 8080:80 --network wpnet --volumes-from datacontainer abatool1/httpd-php**
+**docker run --name apache2 -d -p 8080:80 --network wpnet --volumes-from datacontainer abatool1/httpd-php**
 
 ## Authors
 **Author:** Arfa Batool (batoolarfa@gmail.com)
