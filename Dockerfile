@@ -5,7 +5,7 @@ FROM centos
 RUN mkdir -p /var/www/html 
 
 #Create documentroot directory for mariadb.
-RUN mkdir -p /var/lib/myqsl
+RUN mkdir -p /var/lib/mysql
 
 #Creating user and group apache with uid and guid.
 RUN groupadd -g 107 apache
@@ -42,5 +42,5 @@ chown -R apache:apache /var/www/html && \
 chmod -R 755 /var/www/html
 
 #Difine mountable directories.
-VOLUME ["/var/www/html" , "/var/lib/msql"]
+VOLUME ["/var/www/html" , "/var/lib/mysql"]
 
