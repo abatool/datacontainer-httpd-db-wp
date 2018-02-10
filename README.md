@@ -27,6 +27,7 @@ This command pull the image from Docker Hub.
 First we need create a network that we will use while creating containers
 
 **$ docker create --name datacontainer --network wpnet abatool1/datacontainer-httpd-db-wp**
+
 Then we create a container with this image.
 
 ## Docker run example:
